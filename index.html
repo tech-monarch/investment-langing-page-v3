@@ -4114,139 +4114,88 @@
                   aria-roledescription="carousel"
                   aria-label="Slides"
                 >
-                  <div class="swiper-wrapper">
-                    <div
-                      class="swiper-slide"
-                      role="group"
-                      aria-roledescription="slide"
-                    >
-                      <div class="elementor-testimonial">
-                        <div class="elementor-testimonial__content">
-                          <div class="elementor-testimonial__text">
-                            <video autoplay muted playsinline id="myVideo" width="600">
-  <source src="video1.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+                  <style>
+  .video-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .video-container video {
+    width: 600px;
+    display: block;
+    border-radius: 12px;
+  }
+
+  .mute-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .mute-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+</style>
+
+<div class="swiper-wrapper">
+  <div class="swiper-slide">
+    <div class="video-container">
+      <video autoplay muted playsinline class="myVideo">
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="mute-btn">🔊</button>
+    </div>
+  </div>
+
+  <div class="swiper-slide">
+    <div class="video-container">
+      <video autoplay muted playsinline class="myVideo">
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="mute-btn">🔊</button>
+    </div>
+  </div>
+  <div class="swiper-slide">
+    <div class="video-container">
+      <video autoplay muted playsinline class="myVideo">
+        <source src="video4.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <button class="mute-btn">🔊</button>
+    </div>
+  </div>
+</div>
 
 <script>
-  const myVideo = document.getElementById("myVideo");
+  const videos = document.querySelectorAll(".myVideo");
+  const buttons = document.querySelectorAll(".mute-btn");
 
-  // When the user clicks the video, toggle mute
-  myVideo.addEventListener("click", () => {
-    myVideo.muted = !myVideo.muted;
+  buttons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+      const video = videos[index];
+      video.muted = !video.muted;
+      btn.textContent = video.muted ? "🔊" : "🔇"; // Change icon based on mute state
+    });
   });
 </script>
 
-                          </div>
-                        </div>
-                        <!-- <div class="elementor-testimonial__footer">
-                          <div class="elementor-testimonial__image">
-                            <img
-                              class="swiper-lazy"
-                              data-src="https://demokit.creativemox.com/capwise/wp-content/uploads/sites/9/2025/04/10-1.jpg"
-                              alt="Sarah Mitchell"
-                            />
-                            <div class="swiper-lazy-preloader"></div>
-                          </div>
-                          <cite class="elementor-testimonial__cite"
-                            ><span class="elementor-testimonial__name"
-                              >Sarah Mitchell</span
-                            ><span class="elementor-testimonial__title"
-                              >Jakarta</span
-                            ></cite
-                          >
-                        </div> -->
-                      </div>
-                    </div>
-                    <div
-                      class="swiper-slide"
-                      role="group"
-                      aria-roledescription="slide"
-                    >
-                      <div class="elementor-testimonial">
-                        <div class="elementor-testimonial__content">
-                          <div class="elementor-testimonial__text">
-                            <video autoplay muted playsinline id="myVideo" width="600">
-  <source src="video3.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<script>
-  const myVideo = document.getElementById("myVideo");
-
-  // When the user clicks the video, toggle mute
-  myVideo.addEventListener("click", () => {
-    myVideo.muted = !myVideo.muted;
-  });
-</script>
-
-                          </div>
-                        </div>
-                        <!-- <div class="elementor-testimonial__footer">
-                          <div class="elementor-testimonial__image">
-                            <img
-                              class="swiper-lazy"
-                              data-src="https://demokit.creativemox.com/capwise/wp-content/uploads/sites/9/2025/04/16-1.jpg"
-                              alt="David Collins"
-                            />
-                            <div class="swiper-lazy-preloader"></div>
-                          </div>
-                          <cite class="elementor-testimonial__cite"
-                            ><span class="elementor-testimonial__name"
-                              >David Collins</span
-                            ><span class="elementor-testimonial__title"
-                              >Jakarta</span
-                            ></cite
-                          >
-                        </div> -->
-                      </div>
-                    </div>
-                    <div
-                      class="swiper-slide"
-                      role="group"
-                      aria-roledescription="slide"
-                    >
-                      <div class="elementor-testimonial">
-                        <div class="elementor-testimonial__content">
-                          <div class="elementor-testimonial__text">
-                            <video autoplay muted playsinline id="myVideo" width="600">
-  <source src="video4.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<script>
-  const myVideo = document.getElementById("myVideo");
-
-  // When the user clicks the video, toggle mute
-  myVideo.addEventListener("click", () => {
-    myVideo.muted = !myVideo.muted;
-  });
-</script>
-
-                          </div>
-                        </div>
-                        <!-- <div class="elementor-testimonial__footer">
-                          <div class="elementor-testimonial__image">
-                            <img
-                              class="swiper-lazy"
-                              data-src="https://demokit.creativemox.com/capwise/wp-content/uploads/sites/9/2025/04/2.jpg"
-                              alt="Jessica Evans"
-                            />
-                            <div class="swiper-lazy-preloader"></div>
-                          </div>
-                          <cite class="elementor-testimonial__cite"
-                            ><span class="elementor-testimonial__name"
-                              >Jessica Evans</span
-                            ><span class="elementor-testimonial__title"
-                              >Jakarta</span
-                            ></cite
-                          >
-                        </div> -->
-                      </div>
-                    </div>
-
-
-                  </div>
                 </div>
               </div>
             </div>
